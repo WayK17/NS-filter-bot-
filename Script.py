@@ -1,6 +1,6 @@
 import os
 class script(object):
-    START_TXT = """<b>Hola {}, {}\n\nSoy un bot de filtro automático poderoso. Puedes usarme en tu grupo y te proporcionaré películas o series en latino, tanto en el grupo como en mensajes privados !! 🗿\n<blockquote>🌿 Mantenido por: <a href="https://t.me/NessCloud">NESS Cʟᴏᴜᴅ</a></blockquote></b>"""
+    START_TXT = """<b>Hola {}, {}\n\nSoy un Bot de filtro automático poderoso. Puedes usarme en tu grupo y te proporcionaré películas o series en latino, tanto en el grupo como en mensajes privados !! 🗿\n<blockquote>🌿 Mantenido por: <a href="https://t.me/NessCloud">NESS Cʟᴏᴜᴅ</a></blockquote></b>"""
 
     HELP_TXT = """<b>Haz clic en los botones de abajo para obtener documentación sobre módulos específicos..</b>"""
 
