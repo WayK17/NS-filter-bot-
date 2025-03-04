@@ -1,377 +1,387 @@
 import os
 class script(object):
-    START_TXT = """<b>ʜᴇʏ {}, {}\n\nɪ ᴀᴍ ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏꜰɪʟᴛᴇʀ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ɢɪᴠᴇ ᴍᴏᴠɪᴇs ᴏʀ sᴇʀɪᴇs ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴘᴍ !! 😍\n<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/JISSHU_BOTS">Jɪssʜᴜ Bᴏᴛs</a></blockquote></b>"""
-    
-    HELP_TXT = """<b>ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..</b>"""
-    
-    TELE_TXT = """<b>/telegraph - sᴇɴᴅ ᴍᴇ ᴘɪᴄᴛᴜʀᴇ ᴏʀ ᴠɪᴅᴇᴏ ᴜɴᴅᴇʀ (5ᴍʙ)
+    START_TXT = """<b>Hola {}, {}\n\nSoy un bot de filtro automático poderoso. Puedes usarme en tu grupo y te proporcionaré películas o series en latino, tanto en el grupo como en mensajes privados !! 🗿\n<blockquote>🌿 Mantenido por: <a href="https://t.me/NessCloud">NESS Cʟᴏᴜᴅ</a></blockquote></b>"""
 
-ɴᴏᴛᴇ - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋ ɪɴ ʙᴏᴛʜ ɢʀᴏᴜᴘs ᴀɴᴅ ʙᴏᴛ ᴘᴍ</b>"""
-    FSUB_TXT = """<b>• ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀɴ ᴀᴅᴍɪɴ 😗
-• ᴍᴀᴋᴇ ᴍᴇ ᴀɴ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ᴛᴀʀɢᴇᴛ ғᴏʀᴄᴇ sᴜʙsᴄʀɪʙᴇ ᴄʜᴀɴɴᴇʟ ᴏʀ Gʀᴏᴜᴘ  😉
-• sᴇɴᴅ /fsub ʏᴏᴜʀ_ᴛᴀʀɢᴇᴛ_ᴄʜᴀᴛ_ɪᴅ
-ᴇx: <code>/fsub -100xxxxxx</code>
+    HELP_TXT = """<b>Haz clic en los botones de abajo para obtener documentación sobre módulos específicos..</b>"""
 
-ɴᴏᴡ ɪᴛ's ᴅᴏɴᴇ.ɪ ᴡɪʟʟ ᴄᴏᴍᴘᴇʟ ʏᴏᴜʀ ᴜsᴇʀs ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ/ɢʀᴏᴜᴘ, ᴀɴᴅ I ᴡɪʟʟ ɴᴏᴛ ᴘʀᴏᴠɪᴅᴇ ᴀɴʏ ғɪʟᴇs ᴜɴᴛɪʟ ʏᴏᴜʀ ᴜsᴇʀs ᴊᴏɪɴ ʏᴏᴜʀ ᴛᴀʀɢᴇᴛ ᴄʜᴀɴɴᴇʟ.
+    TELE_TXT = """<b>/telegraph - envíame una imagen o video (menos de 5 MB)
 
-ᴛᴏ ᴅɪsᴀʙʟᴇ ғsᴜʙ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ, sɪᴍᴘʟʏ sᴇɴᴅ <code>/del_fsub</code>
+Nota: este comando funciona tanto en grupos como en mensajes privados del bot</b>"""
 
-ᴛᴏ ᴄʜᴇᴄᴋ ɪғ ғsᴜʙ ɪs ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏʀ ɴᴏᴛ, ᴜsᴇ <code>/show_fsub</code></b>"""
+    FSUB_TXT = """<b>• Agrégame a tu grupo y hazme administrador 😗
+• Hazme administrador en tu objetivo para el canal o grupo de suscripción forzada 😉
+• Envía /fsub tu_id_del_chat_objetivo
+Ej: <code>/fsub -100xxxxxx</code>
 
-    FORCESUB_TEXT="""<b>
-ɪɴ ᴏʀᴅᴇʀ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ᴍᴏᴠɪᴇ ʀᴇᴏ̨ᴜᴇsᴛᴇᴅ ʙʏ ʏᴏᴜ.
+Ahora está hecho. Obligaré a tus usuarios a unirse a tu canal/grupo, y no proporcionaré ningún archivo hasta que se unan a tu canal objetivo.
 
-ʏᴏᴜ ᴡɪʟʟ ʜᴀᴠᴇ ᴛᴏ ᴊᴏɪɴ ᴏᴜʀ ᴏғғɪᴄɪᴀʟ ᴄʜᴀɴɴᴇʟ.
+Para deshabilitar fsub en tu grupo, simplemente envía <code>/del_fsub</code>
 
-ғɪʀsᴛ, ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ "Jᴏɪɴ ᴜᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ" ʙᴜᴛᴛᴏɴ, ᴛʜᴇɴ, ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ "ʀᴇᴏ̨ᴜᴇsᴛ ᴛᴏ Jᴏɪɴ" ʙᴜᴛᴛᴏɴ.
+Para verificar si fsub está conectado o no, usa <code>/show_fsub</code></b>"""
 
-ᴀғᴛᴇʀ ᴛʜᴀᴛ, ᴛʀʏ ᴀᴄᴄᴇssɪɴɢ ᴛʜᴀᴛ ᴍᴏᴠɪᴇ ᴛʜᴇɴ, ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ "ᴛʀʏ ᴀɢᴀɪɴ" ʙᴜᴛᴛᴏɴ.
+    FORCESUB_TEXT = """<b>
+Para obtener la película solicitada por ti.
+
+Tendrás que unirte a nuestro canal oficial.
+
+Primero, haz clic en el botón "Unirse al Canal de Actualizaciones", luego haz clic en el botón "Re-solicitar Unirse".
+
+Después de eso, intenta acceder a esa película y luego haz clic en el botón "intenta de nuevo".
     </b>"""
-    
-    TTS_TXT="""
-<b>• sᴇɴᴅ /tts ᴛᴏ ᴜsᴇ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ</b>"""
+
+    TTS_TXT = """
+<b>• Envía /tts para usar esta función</b>"""
 
     DISCLAIMER_TXT = """
-<b>ᴛʜɪꜱ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
+<b>Este es un proyecto de código abierto.
 
-ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇꜱ ɪɴ ᴛʜɪꜱ ʙᴏᴛ ᴀʀᴇ ꜰʀᴇᴇʟʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ ᴏʀ ᴘᴏꜱᴛᴇᴅ ʙʏ ꜱᴏᴍᴇʙᴏᴅʏ ᴇʟꜱᴇ. ᴊᴜꜱᴛ ꜰᴏʀ ᴇᴀꜱʏ ꜱᴇᴀʀᴄʜɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɪɴᴅᴇxɪɴɢ ꜰɪʟᴇꜱ ᴡʜɪᴄʜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ. ᴡᴇ ʀᴇꜱᴘᴇᴄᴛ ᴀʟʟ ᴛʜᴇ ᴄᴏᴘʏʀɪɢʜᴛ ʟᴀᴡꜱ ᴀɴᴅ ᴡᴏʀᴋꜱ ɪɴ ᴄᴏᴍᴘʟɪᴀɴᴄᴇ ᴡɪᴛʜ ᴅᴍᴄᴀ ᴀɴᴅ ᴇᴜᴄᴅ. ɪꜰ ᴀɴʏᴛʜɪɴɢ ɪꜱ ᴀɢᴀɪɴꜱᴛ ʟᴀᴡ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ꜱᴏ ᴛʜᴀᴛ ɪᴛ ᴄᴀɴ ʙᴇ ʀᴇᴍᴏᴠᴇᴅ ᴀꜱᴀᴘ. ɪᴛ ɪꜱ ꜰᴏʀʙɪʙʙᴇɴ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ, ꜱᴛʀᴇᴀᴍ, ʀᴇᴘʀᴏᴅᴜᴄᴇ, ꜱʜᴀʀᴇ ᴏʀ ᴄᴏɴꜱᴜᴍᴇ ᴄᴏɴᴛᴇɴᴛ ᴡɪᴛʜᴏᴜᴛ ᴇxᴘʟɪᴄɪᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰʀᴏᴍ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴄʀᴇᴀᴛᴏʀ ᴏʀ ʟᴇɢᴀʟ ᴄᴏᴘʏʀɪɢʜᴛ ʜᴏʟᴅᴇʀ. ɪꜰ ʏᴏᴜ ʙᴇʟɪᴇᴠᴇ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴠɪᴏʟᴀᴛɪɴɢ ʏᴏᴜʀ ɪɴᴛᴇʟʟᴇᴄᴛᴜᴀʟ ᴘʀᴏᴘᴇʀᴛʏ, ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʀᴇꜱᴘᴇᴄᴛɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ ꜰᴏʀ ʀᴇᴍᴏᴠᴀʟ. ᴛʜᴇ ʙᴏᴛ ᴅᴏᴇꜱ ɴᴏᴛ ᴏᴡɴ ᴀɴʏ ᴏꜰ ᴛʜᴇꜱᴇ ᴄᴏɴᴛᴇɴᴛꜱ, ɪᴛ ᴏɴʟʏ ɪɴᴅᴇx ᴛʜᴇ ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ. 
+Todos los archivos en este bot están disponibles libremente en Internet o publicados por otros. Para facilitar la búsqueda, este bot indexa archivos que ya están subidos en Telegram. Respetamos todas las leyes de derechos de autor y trabajamos en conformidad con DMCA y EUCD. Si algo va en contra de la ley, por favor contáctame para que se elimine lo antes posible. Está prohibido descargar, transmitir, reproducir, compartir o consumir contenido sin el permiso explícito del creador o titular legal de los derechos. Si crees que este bot está violando tu propiedad intelectual, contacta a los canales respectivos para su eliminación. El bot no posee ninguno de estos contenidos, solo indexa los archivos de Telegram. 
 
-<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/JISSHU_BOTS'>JISSHU BOTS</a></b></blockquote>"""
-    
+<blockquote>🌿 Mantenido por: <a href='https://t.me/NessCloud'>NESS Cʟᴏᴜᴅ</a></blockquote></b>"""
 
-    ABOUT_TEXT = """<blockquote><b>‣ ᴍʏ ɴᴀᴍᴇ : JISSHU\n‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://t.me/MR_JISSHU'>MR.JISSHU</a>\n‣ ʟɪʙʀᴀʀʏ : ᴘʏʀᴏɢʀᴀᴍ\n‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ\n‣ ᴅᴀᴛᴀ ʙᴀsᴇ : ᴍᴏɴɢᴏ ᴅʙ\n‣ ʜᴏsᴛᴇᴅ ᴏɴ  : ᴀʟʟ ᴡᴇʙ\n‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ5.2 [sᴛᴀʙʟᴇ]</b></blockquote>"""    
-    
-    SUPPORT_GRP_MOVIE_TEXT = '''<b>ʜᴇʏ {}
+    ABOUT_TEXT = """<blockquote><b>
+‣ Mi nombre : XinzzZ
+‣ Creador : <a href='https://t.me/WayK17X'>WayK</a>
+‣ Librería : Pyrogram
+‣ Lenguaje : Python
+‣ Base de datos : MongoDB
+‣ Hospedado en  : Tu Corazón
+‣ Estado de compilación : v5.2 [estable]
+</b></blockquote>"""    
 
-ɪ ғᴏᴜɴᴅ {} ʀᴇsᴜʟᴛs 🎁,
-ʙᴜᴛ ɪ ᴄᴀɴ'ᴛ sᴇɴᴅ ʜᴇʀᴇ 🤞🏻
-ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴏᴜʀ ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ ᴛᴏ ɢᴇᴛ ✨</b>'''
+    SUPPORT_GRP_MOVIE_TEXT = '''<b>Hola {}
+
+He encontrado {} resultados 🎁,
+pero no puedo enviarlos aquí 🤞🏻
+por favor únete a nuestro grupo de solicitudes para recibirlos ✨</b>'''
 
     CHANNELS = """
-<u>ᴏᴜʀ ᴀʟʟ ɢʀᴏᴜᴘꜱ ᴀɴᴅ ᴄʜᴀɴɴᴇʟꜱ</u> 
+<u>Nuestros grupos y canales</u> 
 
-▫ ᴀʟʟ ʟᴀᴛᴇꜱᴛ ᴀɴᴅ ᴏʟᴅ ᴍᴏᴠɪᴇꜱ & ꜱᴇʀɪᴇꜱ.
-▫ ᴀʟʟ ʟᴀɴɢᴜᴀɢᴇꜱ ᴍᴏᴠɪᴇꜱ ᴀᴠᴀɪʟᴀʙʟᴇ.
-▫ ᴀʟᴡᴀʏꜱ ᴀᴅᴍɪɴ ꜱᴜᴘᴘᴏʀᴛ.
-▫ 𝟸𝟺x𝟽 ꜱᴇʀᴠɪᴄᴇꜱ ᴀᴠᴀɪʟᴀʙʟᴇ."""
+▫ Todas las películas y series, nuevas y antiguas.
+▫ Películas en todos los idiomas disponibles.
+▫ Soporte siempre de administradores.
+▫ Servicios 24x7 disponibles."""
 
     LOGO = """
 
-BOT WORKING PROPERLY 🔥"""
-    
+BOT FUNCIONANDO CORRECTAMENTE 🔥"""
+
     RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+<b>¡Bot Reiniciado!
 > {} 
-📅 Dᴀᴛᴇ : <code>{}</code>
-⏰ Tɪᴍᴇ : <code>{}</code>
-🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code>v4.2 [ Sᴛᴀʙʟᴇ ]</code>
+📅 Fecha: <code>{}</code>
+⏰ Hora: <code>{}</code>
+🌐 Zona horaria: <code>Asia/Kolkata</code>
+🛠️ Estado de compilación: <code>v4.2 [Estable]</code>
 
-Bʏ @JISSHU_BOTS</b>"""
-        
-    
-    STATUS_TXT = """<b><u>🗃 ᴅᴀᴛᴀʙᴀsᴇ 1 🗃</u>
+Por @NessCloud</b>"""
 
-» ᴛᴏᴛᴀʟ ᴜsᴇʀs - <code>{}</code>
-» ᴛᴏᴛᴀʟ ɢʀᴏᴜᴘs - <code>{}</code>
-» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+    STATUS_TXT = """<b><u>🗃 Base de datos 1 🗃</u>
 
-<u>🗳 ᴅᴀᴛᴀʙᴀsᴇ 2 🗳</u></b>
+✅ Total de usuarios - <code>{}</code>
+✅ Total de grupos - <code>{}</code>
+✅ Almacenamiento usado - <code>{} / {}</code>
 
-» ᴛᴏᴛᴀʟ ꜰɪʟᴇs - <code>{}</code>
-» ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ - <code>{} / {}</code>
+<u>🗳 Base de datos 2 🗳</u>
 
-<u>🤖 ʙᴏᴛ ᴅᴇᴛᴀɪʟs 🤖</u>
+✅ Total de archivos - <code>{}</code>
+✅ Almacenamiento usado - <code>{} / {}</code>
 
-» ᴜᴘᴛɪᴍᴇ - <code>{}</code>
-» ʀᴀᴍ - <code>{}%</code>
-» ᴄᴘᴜ - <code>{}%</code></b>"""
+<u>🤖 Detalles del bot 🤖</u>
 
-    NEW_USER_TXT = """<b>#New_User {}
+🔹 Tiempo activo - <code>{}</code>
+🔹 RAM - <code>{}%</code>
+🔹 CPU - <code>{}%</code></b>"""
 
-≈ ɪᴅ:- <code>{}</code>
-≈ ɴᴀᴍᴇ:- {}</b>"""
+    NEW_USER_TXT = """<b>#Nuevo_Usuario {}
 
-    NEW_GROUP_TXT = """#New_Group {}
+≈ ID: <code>{}</code>
+≈ Nombre: {}</b>"""
 
-Group name - {}
-Id - <code>{}</code>
-Group username - @{}
-Group link - {}
-Total members - <code>{}</code>
-User - {}"""
+    NEW_GROUP_TXT = """#Nuevo_Grupo {}
 
-    REQUEST_TXT = """<b>📜 ᴜꜱᴇʀ - {}
-📇 ɪᴅ - <code>{}</code>
+Nombre del grupo - {}
+ID - <code>{}</code>
+Nombre de usuario del grupo - @{}
+Enlace del grupo - {}
+Total de miembros - <code>{}</code>
+Usuario - {}"""
 
-🎁 ʀᴇǫᴜᴇꜱᴛ ᴍꜱɢ - <code>{}</code></b>"""  
-   
+    REQUEST_TXT = """<b>📜 Usuario - {}
+📇 ID - <code>{}</code>
+
+🎁 Mensaje de solicitud - <code>{}</code></b>"""  
+
     IMDB_TEMPLATE_TXT = """
-<b>ʜᴇʏ {message.from_user.mention}, ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ʀᴇꜱᴜʟᴛꜱ ꜰᴏʀ ʏᴏᴜʀ ǫᴜᴇʀʏ {search}.
+<b>Hola {message.from_user.mention}, aquí están los resultados para tu búsqueda {search}.
 
-🍿 Title: {title}
-🎃 Genres: {genres}
-📆 Year: {release_date}
-⭐ Rating: {rating} / 10</b>
+🍿 | Título : {title}
+🎃 | Géneros : {genres}
+📆 | Año : {release_date}
+⭐ | Calificación : {rating} / 10</b>
 """
 
-    FILE_CAPTION = """<b>{file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Jisshu_Originals">𝙅𝙞𝙨𝙨𝙝𝙪 𝙊𝙧𝙞𝙜𝙞𝙣𝙖𝙡𝙨</a>」</b>"""
+    FILE_CAPTION = """<b>{file_name}\n\nÚnete a ➥ 「<a href="https://t.me/NessCloud">NESS Cloud</a>」</b>"""
+
+    ALRT_TXT = """¡Rápido, quítate de ahí!"""
+
+    OLD_ALRT_TXT = """Estás usando mis mensajes antiguos... envía una nueva solicitud.."""
+
+    NO_RESULT_TXT = """<b>Este mensaje no está publicado o agregado en mi base de datos 🙄</b>"""
+
+    I_CUDNT = """💀 Hola {}
+
+No pude encontrar ninguna película o serie con ese nombre..🐫 """
+
+    I_CUD_NT = """👀 Hola {}
+
+No pude encontrar nada relacionado con eso 😞... revisa tu ortografía."""
     
+    CUDNT_FND = """☠️ Hola {}
 
-    ALRT_TXT = """ᴊᴀʟᴅɪ ʏᴇʜᴀ sᴇ ʜᴀᴛᴏ !"""
+No pude encontrar nada relacionado con eso, ¿quisiste decir alguno de estos? 👇"""
 
-    OLD_ALRT_TXT = """ʏᴏᴜ ᴀʀᴇ ᴜsɪɴɢ ᴍʏ ᴏʟᴅ ᴍᴇssᴀɢᴇs..sᴇɴᴅ ᴀ ɴᴇᴡ ʀᴇǫᴜᴇsᴛ.."""
-
-    NO_RESULT_TXT = """<b>ᴛʜɪs ᴍᴇssᴀɢᴇ ɪs ɴᴏᴛ ʀᴇʟᴇᴀsᴇᴅ ᴏʀ ᴀᴅᴅᴇᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ 🙄</b>"""
-    
-    I_CUDNT = """🤧 𝗛𝗲𝗹𝗹𝗼 {}
-
-𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻𝘆 𝗺𝗼𝘃𝗶𝗲 𝗼𝗿 𝘀𝗲𝗿𝗶𝗲𝘀 𝗶𝗻 𝘁𝗵𝗮𝘁 𝗻𝗮𝗺𝗲.. 😐"""
-
-    I_CUD_NT = """😑 𝗛𝗲𝗹𝗹𝗼 {}
-
-𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗿𝗲𝗹𝗮𝘁𝗲𝗱 𝘁𝗼 𝘁𝗵𝗮𝘁 😞... 𝗰𝗵𝗲𝗰𝗸 𝘆𝗼𝘂𝗿 𝘀𝗽𝗲𝗹𝗹𝗶𝗻𝗴."""
-    
-    CUDNT_FND = """🤧 𝗛𝗲𝗹𝗹𝗼 {}
-
-𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗿𝗲𝗹𝗮𝘁𝗲𝗱 𝘁𝗼 𝘁𝗵𝗮𝘁 𝗱𝗶𝗱 𝘆𝗼𝘂 𝗺𝗲𝗮𝗻 𝗮𝗻𝘆 𝗼𝗻𝗲 𝗼𝗳 𝘁𝗵𝗲𝘀𝗲 ?? 👇"""
-    
-    FONT_TXT= """<b>ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴍᴏᴅᴇ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ꜰᴏɴᴛs sᴛʏʟᴇ, ᴊᴜsᴛ sᴇɴᴅ ᴍᴇ ʟɪᴋᴇ ᴛʜɪs ꜰᴏʀᴍᴀᴛ
+    FONT_TXT = """<b>Puedes usar este modo para cambiar el estilo de tus fuentes, simplemente envíame en este formato
 
 <code>/font hi how are you</code></b>"""
+
+    PLAN_TEXT = """<b>Estamos ofreciendo premium a los precios más bajos:
     
-    PLAN_TEXT = """<b>ᴡᴇ ᴀʀᴇ ᴘʀᴏᴠɪᴅɪɴɢ ᴘʀᴇᴍɪᴜᴍ ᴀᴛ ᴛʜᴇ ʟᴏᴡᴇsᴛ ᴘʀɪᴄᴇs:
-    
-1 ʀᴜᴘᴇᴇ ᴘᴇʀ ᴅᴀʏ 👻
-29 ʀᴜᴘᴇᴇs ғᴏʀ ᴏɴᴇ ᴍᴏɴᴛʜ 😚
-55 ʀᴜᴘᴇᴇs ғᴏʀ ᴛᴡᴏ ᴍᴏɴᴛʜs 😗
+1 dolar por una semana 👻
+3 dolares por un mes 😚
+6 dolares por tres meses 😗
 
-ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ ʙᴜʏɪɴɢ ↡↡↡
-</b>"""
-    
-    VERIFICATION_TEXT = """<b>👋 ʜᴇʏ {} {},
-
-📌 <u>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴠᴇʀɪғɪᴇᴅ ᴛᴏᴅᴀʏ, ᴘʟᴇᴀꜱᴇ ᴄʟɪᴄᴋ ᴏɴ ᴠᴇʀɪғʏ & ɢᴇᴛ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇꜱꜱ ғᴏʀ ᴛɪʟʟ ɴᴇxᴛ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ</u>
-
-#ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ:- 1/3 ✓
-
-ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇꜱ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴꜱ ᴛʜᴇɴ ʙᴜʏ ʙᴏᴛ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ 😊
-
-💶 sᴇɴᴅ /plan ᴛᴏ ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ</b>"""
-
-    VERIFY_COMPLETE_TEXT = """<b>👋 ʜᴇʏ {},
-
-ʏᴏᴜ ʜᴀᴠᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴛʜᴇ 1st ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ✓
-
-ɴᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ ɴᴇxᴛ <code>{}</code></b>"""
-
-    SECOND_VERIFICATION_TEXT = """<b>👋 ʜᴇʏ {} {},
-
-📌 <u>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴠᴇʀɪꜰɪᴇᴅ, ᴛᴀᴘ ᴏɴ ᴛʜᴇ ᴠᴇʀɪꜰʏ ʟɪɴᴋ ᴀɴᴅ ɢᴇᴛ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ ᴛɪʟʟ ɴᴇxᴛ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ</u>
-
-#ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ:- 2/3
-
-ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇꜱ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴꜱ ᴛʜᴇɴ ʙᴜʏ ʙᴏᴛ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ 😊
-
-💶 sᴇɴᴅ /plan ᴛᴏ ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ</b>"""
-
-    SECOND_VERIFY_COMPLETE_TEXT = """<b>👋 ʜᴇʏ {},
-
-ʏᴏᴜ ʜᴀᴠᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴛʜᴇ 2nd ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ✓
-
-ɴᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ ɴᴇxᴛ <code>{}</code></b>"""
-
-    THIRDT_VERIFICATION_TEXT = """<b>👋 ʜᴇʏ {},
-    
-📌 <u>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴠᴇʀɪꜰɪᴇᴅ ᴛᴏᴅᴀʏ, ᴛᴀᴘ ᴏɴ ᴛʜᴇ ᴠᴇʀɪꜰʏ ʟɪɴᴋ & ɢᴇᴛ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ ɴᴇxᴛ ꜰᴜʟʟ ᴅᴀʏ.</u>
-
-#ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ:- 3/3
-
-ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴅɪʀᴇᴄᴛ ꜰɪʟᴇs ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ (ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪꜰʏ)</b>"""
-
-    THIRDT_VERIFY_COMPLETE_TEXT= """<b>👋 ʜᴇʏ {},
-    
-ʏᴏᴜ ʜᴀᴠᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴛʜᴇ 3rd ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ✓
-
-ɴᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇss ꜰᴏʀ ɴᴇxᴛ ꜰᴜʟʟ ᴅᴀʏ </b>"""
-
-    VERIFIED_LOG_TEXT = """<b><u>☄ ᴜsᴇʀ ᴠᴇʀɪꜰɪᴇᴅ sᴜᴄᴄᴇssꜰᴜʟʟʏ ☄</u>
-
-⚡️ ɴᴀᴍᴇ:- {} [ <code>{}</code> ] 
-📆 ᴅᴀᴛᴇ:- <code>{} </code></b>
-
-#verified_{}_completed"""
-
-
-    MOVIES_UPDATE_TXT = """<b>#𝑵𝒆𝒘_𝑭𝒊𝒍𝒆_𝑨𝒅𝒅𝒆𝒅 ✅
-**🍿 Title:** {title}
-**🎃 Genres:** {genres}
-**📆 Year:** {year}
-**⭐ Rating:** {rating} / 10
+Haz clic en el botón de abajo para continuar comprando ↡↡↡
 </b>"""
 
-    PREPLANS_TXT = """<b>👋 ʜᴇʏ {},
+    VERIFICATION_TEXT = """<b>👋 Hola {} {},
 
-<blockquote>🎁 ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇ ʙᴇɴɪꜰɪᴛꜱ:</blockquote>
+📌 <u>No estás verificado hoy, por favor haz clic en verificar y obtén acceso ilimitado hasta la siguiente verificación</u>
 
-❏ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-❏ ɢᴇᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
-❏ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ 
-❏ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ                         
-❏ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs                           
-❏ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs ᴀɴᴅ sᴇʀɪᴇs                                                                        
-❏ ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
-❏ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 𝟷ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
+#verificación:- 1/3 ✓
 
-⛽️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ: /myplan
+Si deseas archivos directos sin ninguna verificación, compra la suscripción del bot 😊
+
+💶 Envía /plan para comprar la suscripción</b>"""
+
+    VERIFY_COMPLETE_TEXT = """<b>👋 Hola {},
+
+Has completado la primera verificación ✓
+
+Ahora tienes acceso ilimitado hasta el próximo <code>{}</code></b>"""
+
+    SECOND_VERIFICATION_TEXT = """<b>👋 Hola {} {},
+
+📌 <u>No estás verificado, toca el enlace de verificación y obtén acceso ilimitado hasta la siguiente verificación</u>
+
+#verificación:- 2/3
+
+Si deseas archivos directos sin ninguna verificación, compra la suscripción del bot 😊
+
+💶 Envía /plan para comprar la suscripción</b>"""
+
+    SECOND_VERIFY_COMPLETE_TEXT = """<b>👋 Hola {},
+
+Has completado la segunda verificación ✓
+
+Ahora tienes acceso ilimitado hasta el próximo <code>{}</code></b>"""
+
+    THIRDT_VERIFICATION_TEXT = """<b>👋 Hola {},
+
+📌 <u>No estás verificado hoy, toca el enlace de verificación y obtén acceso ilimitado por el día completo.</u>
+
+#verificación:- 3/3
+
+Si deseas archivos directos, puedes optar por el servicio premium (sin necesidad de verificar)</b>"""
+
+    THIRDT_VERIFY_COMPLETE_TEXT= """<b>👋 Hola {},
+
+Has completado la tercera verificación ✓
+
+Ahora tienes acceso ilimitado por el día completo </b>"""
+
+    VERIFIED_LOG_TEXT = """<b><u>☄ Usuario verificado con éxito ☄</u>
+
+⚡️ | Nombre: {} [ <code>{}</code> ]
+📆 | Fecha: <code>{}</code></b>
+
+#verificado_{}_completado"""
+
+    MOVIES_UPDATE_TXT = """<b>#Nuevo_Archivo_Agregado ✅
+**🍿 | Título:** {title}
+**🎃 | Géneros:** {genres}
+**📆 | Año:** {year}
+**⭐ | Calificación:** {rating} / 10
+</b>"""
+
+    PREPLANS_TXT = """<b>👋 Hola {},
+
+<blockquote>🎁 Beneficios de la función premium:</blockquote>
+
+❏ No es necesario abrir enlaces
+❏ Obtén archivos directos   
+❏ Experiencia sin anuncios 
+❏ Enlace de descarga de alta velocidad                         
+❏ Enlaces de streaming multi-reproductor                           
+❏ Películas y series ilimitadas                                                                        
+❏ Soporte total de administradores                              
+❏ La solicitud se completará en 1h [si está disponible]
+
+⛽️ Verifica tu plan activo: /myplan
 </b>"""    
 
-    PREPLANSS_TXT = """<b>👋 ʜᴇʏ {}
-    
-<blockquote>🎁 ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇ ʙᴇɴɪꜰɪᴛꜱ:</blockquote>
+    PREPLANSS_TXT = """<b>👋 Hola {}
 
-❏ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-❏ ɢᴇᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
-❏ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ 
-❏ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ                         
-❏ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs                           
-❏ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs ᴀɴᴅ sᴇʀɪᴇs                                                                        
-❏ ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
-❏ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 𝟷ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
+<blockquote>🎁 Beneficios de la función premium:</blockquote>
 
-⛽️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ: /myplan
+❏ No es necesario abrir enlaces
+❏ Obtén archivos directos   
+❏ Experiencia sin anuncios 
+❏ Enlace de descarga de alta velocidad                         
+❏ Enlaces de streaming multi-reproductor                           
+❏ Películas y series ilimitadas                                                                        
+❏ Soporte total de administradores                              
+❏ La solicitud se completará en 1h [si está disponible]
+
+⛽️ Verifica tu plan activo: /myplan
 </b>"""
 
-    OTHER_TXT = """<b>👋 ʜᴇʏ {},
+    OTHER_TXT = """<b>👋 Hola {},
+
+🎁 <u>Otro plan</u>
+⏰ Días personalizados
+💸 De acuerdo a los días que elijas
+
+🏆 Si deseas un nuevo plan aparte del dado, puedes hablar directamente con nuestro <a href='https://t.me/WayK17X'>propietario</a> haciendo clic en el botón de contacto que aparece abajo.
     
-🎁 <u>ᴏᴛʜᴇʀ ᴘʟᴀɴ</u>
-⏰ ᴄᴜꜱᴛᴏᴍɪꜱᴇᴅ ᴅᴀʏꜱ
-💸 ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴅᴀʏꜱ ʏᴏᴜ ᴄʜᴏᴏꜱᴇ
+👨‍💻 Contacta al propietario para obtener tu otro plan.
 
-🏆 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ᴘʟᴀɴ ᴀᴘᴀʀᴛ ꜰʀᴏᴍ ᴛʜᴇ ɢɪᴠᴇɴ ᴘʟᴀɴ, ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀʟᴋ ᴛᴏ ᴏᴜʀ <a href='https://t.me/IM_JISSHU'>ᴏᴡɴᴇʀ</a> ᴅɪʀᴇᴄᴛʟʏ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ.
-    
-👨‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ᴏᴡɴᴇʀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴏᴛʜᴇʀ ᴘʟᴀɴ.
+➛ Usa /plan para ver todos nuestros planes de una vez.
+➛ Verifica tu plan activo usando: /myplan</b>"""
 
-➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+    FREE_TXT = """<b>👋 Hola {}
 
-    FREE_TXT = """<b>👋 ʜᴇʏ {}
-    
-<blockquote>🎖️ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ :</blockquote>
+<blockquote>🎖️Planes premium disponibles:</blockquote>
 
- ❏ 𝟶𝟷𝟻₹    ➠    𝟶𝟷 ᴡᴇᴇᴋꜱ
- ❏ 𝟶𝟹𝟿₹    ➠    𝟶𝟷 ᴍᴏɴᴛʜ
- ❏ 𝟶𝟽𝟻₹    ➠    𝟶𝟸 ᴍᴏɴᴛʜ
- ❏ 𝟷𝟷𝟶₹    ➠    𝟶𝟹 ᴍᴏɴᴛʜ
- ❏ 𝟷𝟿𝟿₹    ➠    𝟶𝟼 ᴍᴏɴᴛʜ
- ❏ 𝟹𝟼𝟶₹    ➠    𝟷𝟸 ᴍᴏɴᴛʜ
+ 💲 01    ➠    01 semana
+ 💲 03    ➠    01 mes
+ 💲 06   ➠     03 meses
+ 💲 10    ➠    06 meses
+ 💲 15   ➠     12 meses
+ 💲 25    ➠    permanente 
 
-🆔 ᴜᴘɪ ɪᴅ ➩ <code>jishan@fam</code> [ᴛᴀᴘ ᴛᴏ ᴄᴏᴘʏ]
+🆔 PayPal ➩ <code>Fifteen15ht@gmail.com</code> [haz clic para copiar]
  
-⛽️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ: /myplan
+⛽️ Verifica tu plan activo: /myplan
 
-🏷️ <a href='https://t.me/jisshu_Premium_proof'>ᴘʀᴇᴍɪᴜᴍ ᴘʀᴏᴏꜰ</a>
+🏷️ <a href='https://t.me/jisshu_Premium_proof'>Prueba premium</a>
 
-‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
-‼️ ɢɪᴠᴇ ᴜꜱ ꜱᴏᴍᴇᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴘʀᴇᴍɪᴜᴍ ʟɪꜱᴛ.
+‼️ Debes enviar una captura de pantalla después del pago.
+‼️ Danos algo de tiempo para agregarte a la lista premium.
 </b>"""
 
     ADMIN_CMD_TXT = """<b><blockquote>
--------------User Premium------------
-➩ /add_premium {user ID} {Times} - Add a premium user
-➩ /remove_premium {user ID} - Remove a premium user
-➩ /add_redeem - Generate a redeem code
-➩ /premium_users - List all premium users
-➩ /refresh - Refresh free trial for users
--------------Update Channel----------
-➩ /set_muc {channel ID} - Set the movies update channel
---------------PM Search--------------
-➩ /pm_search_on - Enable PM search
-➩ /pm_search_off - Disable PM search
---------------Verify ID--------------
-➩ /verify_id - Generate a verification ID for group use only
---------------Set Ads----------------
-➩ /set_ads {ads name}}#{Times}#{photo URL} - <a href="https://t.me/Jisshu_developer/11">Explain</a>
-➩ /del_ads - Delete ads
--------------Top Trending------------
-➩ /setlist {Mirzapur, Money Heist} - <a href=https://t.me/Jisshu_developer/10>Explain</a>
-➩ /clearlist - Clear all lists
+-------------Usuario Premium------------
+➩ /add_premium {ID de usuario} {Tiempo} - Añadir un usuario premium
+➩ /remove_premium {ID de usuario} - Eliminar un usuario premium
+➩ /add_redeem - Generar un código de canje
+➩ /premium_users - Listar todos los usuarios premium
+➩ /refresh - Renovar la prueba gratuita para usuarios
+-------------Canal de Actualizaciones----------
+➩ /set_muc {ID del canal} - Establecer el canal de actualizaciones de películas
+--------------Búsqueda en PM--------------
+➩ /pm_search_on - Activar la búsqueda en PM
+➩ /pm_search_off - Desactivar la búsqueda en PM
+--------------ID de Verificación--------------
+➩ /verify_id - Generar un ID de verificación para uso exclusivo en grupos
+--------------Configurar Anuncios----------------
+➩ /set_ads {nombre de anuncio}#{Tiempo}#{URL de foto} - <a href="https://t.me/Jisshu_developer/11">Explicación</a>
+➩ /del_ads - Eliminar anuncios
+-------------Tendencias Principales------------
+➩ /setlist {Mirzapur, Money Heist} - <a href=https://t.me/Jisshu_developer/10>Explicación</a>
+➩ /clearlist - Borrar todas las listas
 </blockquote></b>"""
 
     ADMIN_CMD_TXT2 = """<b><blockquote>
---------------Index File--------------
-➩ /index - Index all files
---------------Leave Link--------------
-➩ /leave {group ID} - Leave the specified group
--------------Send Message-------------
-➩ /send {user-name} - Use this command as a reply to any message
-----------------Ban User---------------
-➩ /ban {user-name} - Ban user 
-➩ /unban {user-name} - Unban user
---------------Broadcast--------------
-➩ /broadcast - Broadcast a message to all users
-➩ /grp_broadcast - Broadcast a message to all connected groups
-
+--------------Indexar Archivos--------------
+➩ /index - Indexar todos los archivos
+--------------Salir del Grupo--------------
+➩ /leave {ID del grupo} - Salir del grupo especificado
+-------------Enviar Mensaje-------------
+➩ /send {nombre de usuario} - Usa este comando como respuesta a cualquier mensaje
+----------------Banear Usuario---------------
+➩ /ban {nombre de usuario} - Banear al usuario 
+➩ /unban {nombre de usuario} - Desbanear al usuario
+--------------Difusión--------------
+➩ /broadcast - Difundir un mensaje a todos los usuarios
+➩ /grp_broadcast - Difundir un mensaje a todos los grupos conectados
 </blockquote></b>"""
-    
-    GROUP_TEXT = """<b><blockquote>
- --------------Set Verify-------------
-/set_verify {{website link}} {{website api}}
-/set_verify_2 {{website link}} {{website api}}
-/set_verify_3 {{website link}} {{website api}}
--------------Set Verify Time-----------
-/set_time_2 {{seconds}} Sᴇᴛ ᴛʜᴇ sᴇᴄᴏɴᴅ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
-/set_time_3 {{seconds}} Sᴇᴛ ᴛʜᴇ ᴛʜɪʀᴅ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
---------------Verify On Off------------
-/verifyoff {{verify.off code}} - off verification <a href="https://t.me/IM_JISSHU">Cᴏɴᴛᴀᴄᴛ</a> ᴛʜᴇ ʙᴏᴛ ᴀᴅᴍɪɴ ғᴏʀ ᴀ ᴠᴇʀɪғʏ.ᴏғғ ᴄᴏᴅᴇ
-/verifyon - on verification 
-------------Set File Caption-----------
-/set_caption - set coustom file caption 
------------Set Imdb Template-----------
-/set_template - set IMDb template <a href="https://t.me/Jisshu_developer/8">Example</a>
---------------Set Tutorial-------------
-/set_tutorial - set verification tutorial 
--------------Set Log Channel-----------
---> ᴀᴅᴅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ & ᴍᴀᴋᴇ sᴜʀᴇ ʙᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ 👇
 
-/set_log {{log channel id}}
+    GROUP_TEXT = """<b><blockquote>
+ --------------Configurar Verificación-------------
+/set_verify {enlace del sitio web} {API del sitio web}
+/set_verify_2 {enlace del sitio web} {API del sitio web}
+/set_verify_3 {enlace del sitio web} {API del sitio web}
+-------------Configurar Tiempo de Verificación-----------
+/set_time_2 {segundos} Establece el tiempo para la segunda verificación
+/set_time_3 {segundos} Establece el tiempo para la tercera verificación
+--------------Verificación Activar/Desactivar------------
+/verifyoff {código verify.off} - Desactivar la verificación <a href="https://t.me/IM_JISSHU">CONTACTA</a> al admin del bot para un código verify.off
+/verifyon - Activar la verificación 
+------------Configurar Leyenda del Archivo-----------
+/set_caption - Establece una leyenda personalizada para el archivo 
+-----------Configurar Plantilla de IMDb-----------
+/set_template - Establece la plantilla de IMDb <a href="https://t.me/Jisshu_developer/8">Ejemplo</a>
+--------------Configurar Tutorial-------------
+/set_tutorial - Establece el tutorial de verificación 
+-------------Configurar Canal de Log-----------
+--> Añade un canal de logs usando este formato y asegúrate de que el bot sea administrador en tu canal de logs 👇
+
+/set_log {ID del canal de logs}
 ---------------------------------------
-ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀʟʟ ᴅᴇᴛᴀɪʟs 
-ʙʏ /details ᴄᴏᴍᴍᴀɴᴅ
+Puedes consultar todos tus detalles mediante el comando /details
 </blockquote>
-Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ᴀɴᴅ ᴜsᴇ ᴀʟʟ ғᴇᴀᴛᴜʀᴇs😇</b>"""
+Agrégame a tu grupo, hazme administrador y utiliza todas las funciones 😇</b>"""
 
     SOURCE_TXT = """<b>
-NOTE:
-- ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʜᴇʀᴇ ◉› :<blockquote><a href="https://t.me/JISSHU_BOTS">𝗝𝗶𝘀𝘀𝗵𝘂-𝗙𝗶𝗹𝘁𝗲𝗿-𝗕𝗼𝘁</a></blockquote>
+NOTA:
+- Código fuente aquí ◉› :<blockquote><a href="https://t.me/JISSHU_BOTS">Jisshu-Filter-Bot</a></blockquote>
 
-developer : Mr.Jisshu
+desarrollador : Mr.Jisshu
 </b>""" 
-    GROUP_C_TEXT = """<b><blockquote>
- --------------Set Verify-------------
-/set_verify {website link} {website api}
-/set_verify_2 {website link} {website api}
-/set_verify_3 {website link} {website api}
--------------Set Verify Time-----------
-/set_time_2 {seconds} Sᴇᴛ ᴛʜᴇ sᴇᴄᴏɴᴅ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
-/set_time_3 {seconds} Sᴇᴛ ᴛʜᴇ ᴛʜɪʀᴅ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
---------------Verify On Off------------
-/verifyoff {verify.off code} - off verification <a href="https://t.me/IM_JISSHU">Cᴏɴᴛᴀᴄᴛ</a> ᴛʜᴇ ʙᴏᴛ ᴀᴅᴍɪɴ ғᴏʀ ᴀ ᴠᴇʀɪғʏ.ᴏғғ ᴄᴏᴅᴇ
-/verifyon - on verification 
-------------Set File Caption-----------
-/set_caption - set coustom file caption 
------------Set Imdb Template-----------
-/set_template - set IMDb template <a href="https://t.me/Jisshu_developer/8">Example</a>
---------------Set Tutorial-------------
-/set_tutorial {tutorial link} - set 1 verification tutorial 
-/set_tutorial_2 {tutorial link} - set 2 verification tutorial 
-/set_tutorial_3 {tutorial link} - set 3 verification tutorial 
--------------Set Log Channel-----------
---> ᴀᴅᴅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ & ᴍᴀᴋᴇ sᴜʀᴇ ʙᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ 👇
 
-/set_log {log channel id}
+    GROUP_C_TEXT = """<b><blockquote>
+ --------------Configurar Verificación-------------
+/set_verify {enlace del sitio web} {API del sitio web}
+/set_verify_2 {enlace del sitio web} {API del sitio web}
+/set_verify_3 {enlace del sitio web} {API del sitio web}
+-------------Configurar Tiempo de Verificación-----------
+/set_time_2 {segundos} Establece el tiempo para la segunda verificación
+/set_time_3 {segundos} Establece el tiempo para la tercera verificación
+--------------Verificación Activar/Desactivar------------
+/verifyoff {código verify.off} - Desactivar la verificación <a href="https://t.me/IM_JISSHU">CONTACTA</a> al admin del bot para un código verify.off
+/verifyon - Activar la verificación 
+------------Configurar Leyenda del Archivo-----------
+/set_caption - Establece una leyenda personalizada para el archivo 
+-----------Configurar Plantilla de IMDb-----------
+/set_template - Establece la plantilla de IMDb <a href="https://t.me/Jisshu_developer/8">Ejemplo</a>
+--------------Configurar Tutorial-------------
+/set_tutorial {enlace del tutorial} - Establece 1 tutorial de verificación 
+/set_tutorial_2 {enlace del tutorial} - Establece 2 tutoriales de verificación 
+/set_tutorial_3 {enlace del tutorial} - Establece 3 tutoriales de verificación 
+-------------Configurar Canal de Log-----------
+--> Añade un canal de logs usando este formato y asegúrate de que el bot sea administrador en tu canal de logs 👇
+
+/set_log {ID del canal de logs}
 ---------------------------------------
-ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀʟʟ ᴅᴇᴛᴀɪʟs 
-ʙʏ /details ᴄᴏᴍᴍᴀɴᴅ
+Puedes consultar todos tus detalles mediante el comando /details
 </blockquote>
-Iғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ᴅᴏᴜʙᴛs ᴘʟᴇᴀsᴇ <a href="https://t.me/IM_JISSHU">ᴄᴏɴᴛᴀᴄᴛ</a> ᴍʏ <a href="https://t.me/IM_JISSHU">ᴀᴅᴍɪɴ</a></b>"""
+Si tienes alguna duda, por favor <a href="https://t.me/IM_JISSHU">CONTACTA</a> a mi <a href="https://t.me/IM_JISSHU">administrador</a></b>"""
+
+    SOURCE_TXT = """<b>
+NOTA:
+- Código fuente aquí ◉› :<blockquote><a href="https://t.me/JISSHU_BOTS">Jisshu-Filter-Bot</a></blockquote>
+
+desarrollador : Mr.Jisshu
+</b>"""
