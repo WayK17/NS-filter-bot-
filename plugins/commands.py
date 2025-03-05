@@ -444,13 +444,19 @@ async def delete_all_index(bot, message):
         return
     await message.reply_text('<b>Esto eliminará todos los archivos indexados.\n¿Deseas continuar?</b>', reply_markup=InlineKeyboardMarkup(btn))
 
-
 @Client.on_message(filters.command('settings'))
 async def settings(client, message):
-    # ... (código previo)
+    user_id = message.from_user.id if message.from_user else None
+    if not user_id:
+        return await message.reply("<b>💔 Eres un administrador anónimo, no puedes usar este comando...</b>")
+    chat_type = message.chat.type
+    if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        return await message.reply_text("<code>Usa este comando en un grupo. xD</code>")
+    grp_id = message.chat.id
+    if not await is_check_admin(client, grp_id, message.from_user.id):
+        return await message.reply_text('<b>No eres administrador en este grupo :V</b>')
     settings = await get_settings(grp_id)
-    title = message.chat.title
-
+    title = message.chat.title 
     if settings is not None:
         buttons = [
             [
