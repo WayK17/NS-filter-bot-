@@ -325,7 +325,7 @@ async def start(client: Client, message):
                 file_caption=file.caption
             )
             btn = [[
-                InlineKeyboardButton("✛ VER Y DESCARGAR ✛", callback_data=f'stream#{file.file_id}')
+                InlineKeyboardButton("Únete a Nuestro Canal", callback_data=f'stream#{file.file_id}')
             ]]
             toDel = await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -334,13 +334,13 @@ async def start(client: Client, message):
                 reply_markup=InlineKeyboardMarkup(btn)
             )
             files_to_delete.append(toDel)
-        delCap = "<b>Todos los {} archivos serán eliminados después de {} para evitar violaciones de derechos de autor.</b>".format(
+        delCap = "<blockquote><b><u>❗️❗️❗️IMPORTANTE❗️️❗️❗️</u></b>\n\nEste mensaje será eliminado en <b><u>10 minutos</u> 🫥 <i></b>(Debido a problemas de derechos de autor)</i>.\n\n<b><i>Por favor, reenvía este mensaje a tus mensajes guardados o a cualquier chat privado.</i></b></blockquote>".format(
             len(files_to_delete),
-            f'{FILE_AUTO_DEL_TIMER / 60} minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} segundos'
+            f'{FILE_AUTO_DEL_TIMER / 60} Minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} Segundos'
         )
-        afterDelCap = "<b>Todos los {} archivos han sido eliminados después de {} para evitar violaciones de derechos de autor.</b>".format(
+        afterDelCap = "<blockquote><b><u>❗️❗️❗️IMPORTANTE❗️️❗️❗️</u></b>\n\nEste mensaje será eliminado en <b><u>10 minutos</u> 🫥 <i></b>(Debido a problemas de derechos de autor)</i>.\n\n<b><i>Por favor, reenvía este mensaje a tus mensajes guardados o a cualquier chat privado.</i></b></blockquote>".format(
             len(files_to_delete),
-            f'{FILE_AUTO_DEL_TIMER / 60} minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} segundos'
+            f'{FILE_AUTO_DEL_TIMER / 60} Minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} Segundos'
         )
         replyed = await message.reply(delCap)
         await asyncio.sleep(FILE_AUTO_DEL_TIMER)
@@ -365,7 +365,7 @@ async def start(client: Client, message):
         file_caption=files.caption
     )
     btn = [[
-        InlineKeyboardButton("✛ VER Y DESCARGAR ✛", callback_data=f'stream#{file_id}')
+        InlineKeyboardButton("Únete a Nuestro Canal", callback_data=f'stream#{file_id}')
     ]]
     toDel = await client.send_cached_media(
         chat_id=message.from_user.id,
@@ -373,11 +373,11 @@ async def start(client: Client, message):
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(btn)
     )
-    delCap = "<b>Tu archivo será eliminado después de {} para evitar violaciones de derechos de autor.</b>".format(
-        f'{FILE_AUTO_DEL_TIMER / 60} minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} segundos'
+    delCap = "<blockquote><b><u>❗️❗️❗️IMPORTANTE❗️️❗️❗️</u></b>\n\nEste mensaje será eliminado en <b><u>10 minutos</u> 🫥 <i></b>(Debido a problemas de derechos de autor)</i>.\n\n<b><i>Por favor, reenvía este mensaje a tus mensajes guardados o a cualquier chat privado.</i></b></blockquote>".format(
+        f'{FILE_AUTO_DEL_TIMER / 60} Minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} Segundos'
     )
-    afterDelCap = "<b>Tu archivo ha sido eliminado después de {} para evitar violaciones de derechos de autor.</b>".format(
-        f'{FILE_AUTO_DEL_TIMER / 60} minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} segundos'
+    afterDelCap = "<blockquote><b><u>❗️❗️❗️IMPORTANTE❗️️❗️❗️</u></b>\n\nEste mensaje será eliminado en <b><u>10 minutos</u> 🫥 <i></b>(Debido a problemas de derechos de autor)</i>.\n\n<b><i>Por favor, reenvía este mensaje a tus mensajes guardados o a cualquier chat privado.</i></b></blockquote>".format(
+        f'{FILE_AUTO_DEL_TIMER / 60} Minutos' if FILE_AUTO_DEL_TIMER >= 60 else f'{FILE_AUTO_DEL_TIMER} Segundos'
     )
     replyed = await message.reply(delCap, reply_to_message_id=toDel.id)
     await asyncio.sleep(FILE_AUTO_DEL_TIMER)
