@@ -462,26 +462,26 @@ async def settings(client, message):
         buttons = [[
             InlineKeyboardButton('Auto Filtro', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}'),
             InlineKeyboardButton('Encendido ✓' if settings["auto_filter"] else 'Apagado ✗', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}')
-        ],[
+          ],[
             InlineKeyboardButton('IMDb', callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}'),
             InlineKeyboardButton('Encendido ✓' if settings["imdb"] else 'Apagado ✗', callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}')
-        ],[
+          ],[
             InlineKeyboardButton('Revisión ortográfica', callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}'),
             InlineKeyboardButton('Encendido ✓' if settings["spell_check"] else 'Apagado ✗', callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}')
-        ],[
+          ],[
             InlineKeyboardButton('Auto Eliminar', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}'),
             InlineKeyboardButton(f'{get_readable_time(DELETE_TIME)}' if settings["auto_delete"] else 'Apagado ✗', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}')
-        ],[
+          ],[
            InlineKeyboardButton('Modo de Resultado', callback_data=f'setgs#link#{settings["link"]}#{str(grp_id)}'),
                 InlineKeyboardButton('⛓ Enlace' if settings["link"] else '🧲 Botón', callback_data=f'setgs#link#{settings["link"]}#{str(grp_id)}')
-            ],[
+          ],[
                 InlineKeyboardButton('❌ Cerrar ❌', callback_data='close_data')
-            ]]
-            await message.reply_text(
+          ]]
+          await message.reply_text(
                 text=f"Cambia tus configuraciones para <b>'{title}'</b> como desees ✨",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=enums.ParseMode.HTML
-            )
+          )
     else:
         await message.reply_text('<b>Algo salió mal</b>')
 
