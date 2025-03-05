@@ -447,43 +447,45 @@ async def delete_all_index(bot, message):
 
 @Client.on_message(filters.command('settings'))
 async def settings(client, message):
-    user_id = message.from_user.id if message.from_user else None
-    if not user_id:
-        return await message.reply("<b>💔 Eres anónimo, como administrador no puedes usar este comando...</b>")
-    chat_type = message.chat.type
-    if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await message.reply_text("<code>Usa este comando en un grupo.</code>")
-    grp_id = message.chat.id
-    if not await is_check_admin(client, grp_id, message.from_user.id):
-        return await message.reply_text('<b>No eres administrador en este grupo</b>')
+    # ... (código previo)
     settings = await get_settings(grp_id)
     title = message.chat.title
+
     if settings is not None:
-          buttons = [[
-              InlineKeyboardButton('Auto Filtro', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}'),
-              InlineKeyboardButton('Encendido ✓' if settings["auto_filter"] else 'Apagado ✗', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}')
-            ],[
-              InlineKeyboardButton('IMDb', callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}'),
-              InlineKeyboardButton('Encendido ✓' if settings["imdb"] else 'Apagado ✗', callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}')
-            ],[
-              InlineKeyboardButton('Revisión ortográfica', callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}'),
-              InlineKeyboardButton('Encendido ✓' if settings["spell_check"] else 'Apagado ✗', callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}')
-            ],[
-              InlineKeyboardButton('Auto Eliminar', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}'),
-              InlineKeyboardButton(f'{get_readable_time(DELETE_TIME)}' if settings["auto_delete"] else 'Apagado ✗', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}')
-            ],[
-             InlineKeyboardButton('Modo de Resultado', callback_data=f'setgs#link#{settings["link"]}#{str(grp_id)}'),
-                  InlineKeyboardButton('⛓ Enlace' if settings["link"] else '🧲 Botón', callback_data=f'setgs#link#{settings["link"]}#{str(grp_id)}')
-            ],[
-                  InlineKeyboardButton('❌ Cerrar ❌', callback_data='close_data')
-            ]]
-            await message.reply_text(
-                  text=f"Cambia tus configuraciones para <b>'{title}'</b> como desees ✨",
-                  reply_markup=InlineKeyboardMarkup(buttons),
-                  parse_mode=enums.ParseMode.HTML
-            )
+        buttons = [
+            [
+                InlineKeyboardButton('Auto Filtro', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}'),
+                InlineKeyboardButton('Encendido ✓' if settings["auto_filter"] else 'Apagado ✗', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}')
+            ],
+            [
+                InlineKeyboardButton('IMDb', callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}'),
+                InlineKeyboardButton('Encendido ✓' if settings["imdb"] else 'Apagado ✗', callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}')
+            ],
+            [
+                InlineKeyboardButton('Revisión ortográfica', callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}'),
+                InlineKeyboardButton('Encendido ✓' if settings["spell_check"] else 'Apagado ✗', callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}')
+            ],
+            [
+                InlineKeyboardButton('Auto Eliminar', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}'),
+                InlineKeyboardButton(f'{get_readable_time(DELETE_TIME)}' if settings["auto_delete"] else 'Apagado ✗', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}')
+            ],
+            [
+                InlineKeyboardButton('Modo de Resultado', callback_data=f'setgs#link#{settings["link"]}#{str(grp_id)}'),
+                InlineKeyboardButton('⛓ Enlace' if settings["link"] else '🧲 Botón', callback_data=f'setgs#link#{settings["link"]}#{str(grp_id)}')
+            ],
+            [
+                InlineKeyboardButton('❌ Cerrar ❌', callback_data='close_data')
+            ]
+        ]
+        
+        # ¡Indentación correcta aquí!
+        await message.reply_text(
+            text=f"Cambia tus configuraciones para <b>'{title}'</b> como desees ✨",
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
     else:
-        await message.reply_text('<b>Algo salió mal</b>')
+        await message.reply_text('<b>Algo salió mal</b>') 
 
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
